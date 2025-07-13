@@ -26,9 +26,9 @@ print(data.shape)
 
 
 acwtypes = jl.pyconvert(jl.Vector, [jl.Symbol(i) for i in ["acw50", "tau"]])
-anan = jl.acw(data, fs, acwtypes=acwtypes, dims=3, trial_dims=1, average_over_trials=True, parallel=True)
+results = jl.acw(data, fs, acwtypes=acwtypes, dims=3, trial_dims=1, average_over_trials=True, parallel=True)
 
-acw_results = anan.acw_results
+acw_results = results.acw_results
 acw50 = np.array(acw_results[0])[0]
 tau = np.array(acw_results[1])[0]
 
